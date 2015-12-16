@@ -16,5 +16,5 @@ else
     echo "changed packages found: $NAMES"
     hammer build --output=/tmp/out $NAMES
 fi
-
+ls /tmp/out
 echo $CURRENT > $LAST_FILE
