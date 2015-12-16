@@ -11,7 +11,7 @@ for PKG in $(ls $OUTPUT); do
     fi
 
     echo "$PKG:\tuploading"
-    URL=$(echo $PKG | sed -E "s|^(([a-zA-Z\-]+)-([0-9\.\-]+)\..*)$|https://api.bintray.com/content/$BINTRAY_PROJECT/rpm/traefik/0.0.0-8|")
+    URL="https://api.bintray.com/content/$BINTRAY_PROJECT/rpm/traefik/0.0.0-8"
     RESP=$(curl -T $OUTPUT/$PKG -u$BINTRAY_USER:$BINTRAY_API_KEY $URL)
     if [[ "$RESP" == '{"message":"success"}' ]]; then
         echo "$PKG:	succesfully uploaded"
