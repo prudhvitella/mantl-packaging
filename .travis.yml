@@ -24,8 +24,8 @@ script:
 after_failure:
   - tail logs/*
 
-deploy:
-  provider: script
-  script: /bin/bash scripts/bintray.sh /tmp/out
-  on:
-    branch: master
+after_success:
+  - ghr --username prudhvitella --token $GITHUB_TOKEN --replace --prerelease --debug pre-release  /tmp/out/
+branches:
+  only:
+    - master
