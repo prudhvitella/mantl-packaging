@@ -17,6 +17,8 @@ install:
   # packages for packaging
   - go get -v github.com/asteris-llc/hammer
   - gem install fpm
+  - go get github.com/mitchellh/gox
+  - go get github.com/tcnksm/ghr
 
 script:
   - ./scripts/travis.sh
